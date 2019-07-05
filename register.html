@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+        <script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+    <script type="text/javascript" src="js/register.js"></script>
+<script>
+
+    	$(function(){
+			$('#btns input').click(function() {
+			    console.log('13');
+				//失去焦点，避免出现默认的蓝框
+				$(this).blur();
+				//this是原生的对象
+				// alert(this);//弹出[object HTMLInputElement]，说明this就是当前点击的input元素
+
+				//jQuery的this对象使用时要用$()包起来，这样就可以调用jQuery的方法了
+				//给当前元素添加选中样式，为兄弟元素移除选中样式
+				$(this).addClass('cur').siblings().removeClass('cur');
+
+				//$(this).index()获取当前按钮所在层级范围的索引值
+				//显示对应索引的内容区，隐藏其它兄弟内容区
+				$('#contentss  activel1').eq($(this).index()).addClass('active1').siblings().removeClass('active1');
+			});
+		})
+
+</script>
+</head>
+<body>
+<div class="header">
+    <div class="header-bottom">
+        <div class="logo">
+          <img src="logo.png" alt="1">
+
+
+        </div>
+             <div class="com">
+                 <img src="commitment.png">
+        </div>
+
+    </div>
+    <div class="create">
+        <p class="create-right">
+            已有账号
+            <a href="#">快速登陆</a>
+        </p>
+
+                   <div class="btns" id="btns">
+            <input type="button" value="邮箱注册" class="cur">
+            <input type="button" value="手机注册"></div>
+        <div class="contentss active1" id="contentss">
+            <ul class="email">
+                <li class="prz">
+                    <label>邮箱</label>
+                    <div class="warp">
+
+                        <input class="intext" type="text" name="username" id="email" value="" placeholder="请输入您常用的邮箱">
+                                 <span class="error_tip">提示信息</span>
+                    </div>
+                    <li class="prz">
+                    <label>用户名</label>
+                    <div class="warp">
+
+                        <input class="intext" type="text" name="email" id="username" value="" placeholder="请输入您的用户名">
+                        <span>提示信息</span>
+                        <span class="error_tip " style="color: red"></span>
+
+                    </div>
+                  <li class="prz">
+                    <label>密码</label>
+                    <div class="warp">
+
+                        <input class="intext" type="text"  id="password1" value="" placeholder="请输入6至20位的数字，字母组合">
+                                 <span>提示信息</span>
+
+                    </div>
+                <div class="level">
+                    <span>危险</span>
+                    <span>时钟</span>
+                    <span>安全</span>
+
+                </div>
+     <li class="prz">
+                    <label>确认密码</label>
+                    <div class="warp">
+
+                        <input class="intext" type="text" name="email" id="password2" value="" placeholder="请输入6至20位的数字，字母组合">
+                                 <span>提示信息</span>
+                    </div>
+            </li>
+
+                <div class="ls">
+                    <label>验证码</label>
+                    <div class="input-warp-b">
+                        <input class="intext yzm" type="text" name="yzm" id="yzm" maxlength="4" value="" placeholder="右侧验证码">
+                                 <span>提示信息</span>
+                       <img class="yzmimg" src="./yzm.png" width="72" height="36" onclick="$(this).next().click();">
+                        <a href="#">换一张</a>
+
+                    </div>
+
+                </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="agreement" hidefocus="true" checked="checked">
+            <span>我已阅读并接受</span>
+            <a href="#">《拉手网用户协议》</a>
+        </label>
+
+                        </div>
+                 <div class="input-warp-c">
+                     <input class="insubmit" name="submitted" type="submit" id="" value="注 册">
+                              <span>提示信息</span>
+
+
+        </div>
+
+            </ul>
+
+        <div class="form-group">
+
+
+  <div class="login-qro">
+      <img src="index-qrcode_b5d4977%20(1).png" width="126px" height="126px">
+
+            <div class="login-qro-text">
+                <p>
+                手机上拉手
+                <br>
+                    <span>低价</span>
+                享不停
+                </p>
+
+            </div>
+
+            </div>
+
+
+
+
+        </div>
+         </div>
+
+    </div>
+
+
+</body>
+</html>
